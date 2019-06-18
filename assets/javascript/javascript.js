@@ -16,12 +16,12 @@ $(document).ready(function() {
         // add new buttons to list
         $(".submit").on("click", function(event) {
         event.preventDefault();
-        var food= $('#user-input').val()
+        var food= $(".form-control").val()
         $("#user-input").text("hello")
         topics.unshift(food);
         GenerateButtons();
         console.log("clicked")
-
+            console.log(food)
         })
 
               // Use API to search for selected topic and display images
@@ -40,10 +40,10 @@ $(document).ready(function() {
                 var image = response.data[i].images.fixed_height_still.url;
                 var rating = response.data[i].rating;
                 topicDiv.append(
-                    '<figure class="floatLeft">' + 
+                    '<figure>' + 
                 '<img class="gif" src="' + image + '">' +
                         '<figcaption>' + 'Rating: ' + rating + '</figcaption>' +
-                    '</figure>' 
+                    '</figure>' +"<br>"
                 );
 
                 // Display gifs on page
