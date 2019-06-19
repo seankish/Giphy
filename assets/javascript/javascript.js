@@ -35,36 +35,46 @@ $(document).ready(function() {
         }).then(function(response) {
             console.log(response)
             $(".gif-view").empty();
-            for (var i = 0; i<response.data.length; i++) { 
+            for (var i = 0; i<response.data.length/2; i++) { 
                 var topicDiv = $('<div class="topic">'); 
                 var image = response.data[i].images.fixed_height_still.url;
+                var gif =response.data[i].images.fixed_height.url
                 var rating = response.data[i].rating;
+                topicDiv.attr("src",image)
+                topicDiv.attr("data-gif", gif)
+                topicDiv.attr("class","topic-div")
+                topicDiv.attr("data-index",i)
+                topicDiv.attr("data-img",image)
                 topicDiv.append(
                     '<figure>' + 
                 '<img class="gif" src="' + image + '">' +
                         '<figcaption>' + 'Rating: ' + rating + '</figcaption>' +
                     '</figure>' +"<br>"
                 );
-
                 // Display gifs on page
                 $(".gif-view").append(topicDiv);
             }
-            
-    
         });
-
-    }
-
-            
-            
-
-               
+    }          
     $(document).on("click", ".food", displayGifs);
-
     GenerateButtons();
+    // animate gif on click
       
         
-
+    $(document).on("click", ".topic-div", function(event) {
+        
+        var currentIn = $(this).attr("data-index");
+        var tempUrl = $(this).attr("data-gif");
+        var tempUrl2 = $(this).attr("data-img");
+        console.log(currentIn);
+        console.log(tempUrl);
+        if ($(this).attr("src") == tempUrl2) {
+            $(this).attr("src", tempUrl);
+        }
+        else if ($(this).attr("src") == tempUrl) {
+            $(this).attr("src", tempUrl2);
+        };
+    });
 
 
 })
