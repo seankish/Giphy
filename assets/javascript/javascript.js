@@ -23,11 +23,11 @@ $(document).ready(function() {
         console.log("clicked")
             console.log(food)
         })
-
+ 
               // Use API to search for selected topic and display images
         function displayGifs() {
             var food = $(this).attr("data-name");
-            var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + food  + "&api_key=qF26EQ71WEAdIYhWDmXlY3fLjbTDBcFC"
+            var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + food  + "&api_key=qF26EQ71WEAdIYhWDmXlY3fLjbTDBcFC"
             // queryURL.done(function(data) { console.log("success got data", data); });
         $.ajax({
             url: queryURL,
