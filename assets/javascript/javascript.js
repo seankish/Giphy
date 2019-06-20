@@ -59,7 +59,7 @@ $(document).ready(function() {
     $(document).on("click", ".food", displayGifs);
     GenerateButtons();
     // animate gif on click
-      
+       
         
    
         $("body").on("click",".gif", function() {
