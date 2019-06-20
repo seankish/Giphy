@@ -61,23 +61,38 @@ $(document).ready(function() {
     // animate gif on click
       
         
-    $(document).on("click", ".topic-div", function(event) {
+   
+        $("body").on("click",".gif", function() {
+            var src = $(this).attr('src');
+            if($(this).hasClass('playing')) {
+                // stop
+                $(this).attr('src', src.replace(/\.gif/i, "_s.gif"))
+                $(this).removeClass('playing');
+            }
+            else {
+                // play
+                $(this).addClass('playing');
+                $(this).attr('src', src.replace(/\_s.gif/i, ".gif"))
+            }
+        });
         
-        var currentIn = $(this).attr("data-index");
-        var tempUrl = $(this).attr("data-gif");
-        var tempUrl2 = $(this).attr("data-img");
-        console.log(currentIn);
-        console.log(tempUrl);
-        if ($(this).attr("src") == tempUrl2) {
-            $(this).attr("src", tempUrl);
-        }
-        else if ($(this).attr("src") == tempUrl) {
-            $(this).attr("src", tempUrl2);
-        };
-    });
+    //     var currentIn = $(this).attr("data-index");
+    //     var tempUrl = $(this).attr("data-gif");
+    //     var tempUrl2 = $(this).attr("data-img");
+    //     console.log(currentIn);
+    //     console.log(tempUrl);
+    //     if ($(this).attr("src") == tempUrl2) {
+    //         $(this).attr("src", tempUrl);
+    //     }
+    //     else if ($(this).attr("src") == tempUrl) {
+    //         $(this).attr("src", tempUrl2);
+    //     };
+    // });
 
 
 })
+
+
 
 
 
