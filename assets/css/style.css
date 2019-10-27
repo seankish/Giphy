@@ -1,8 +1,26 @@
 body {
-    background-image: url("../images/background.jpeg");
+    background-image: url("../images/background3.jpg");
 }
 
 .topic-div {
     float: left;
     margin: 5px;
+}
+
+/* Buttons */
+
+.form-group {
+    margin-bottom: 10px;
+}
+
+.add-food-mb {
+    margin-bottom: 30px;
+}
+
+.mb {
+    margin-bottom: 10px;
+}
+
+.mr {
+    margin-right: 10px;
 }

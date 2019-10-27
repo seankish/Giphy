@@ -7,7 +7,7 @@ $(document).ready(function() {
         // use loop to append buttons
         for (var i=0; i < topics.length; i++) {
             var button =$('<button type="button">');
-            button.addClass("btn btn-warning food");
+            button.addClass("btn btn-primary food mb mr");
             button.attr("data-name", topics[i]);
             button.text(topics[i]);
             $(".gif-buttons").append(button);
