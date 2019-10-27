@@ -48,7 +48,7 @@ $(document).ready(function() {
                 topicDiv.append(
                     '<figure>' + 
                 '<img class="gif" src="' + image + '">' +
-                        '<figcaption>' + 'Rating: ' + rating + '</figcaption>' +
+                        '<figcaption>' + '<b>Rating: ' + rating + '</figcaption></b>' +
                     '</figure>' +"<br>"
                 );
                 // Display gifs on page
